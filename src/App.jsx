@@ -1,5 +1,7 @@
 import carrotLogo from "./assets/carrot.jpg";
 import office from "./assets/office.avif";
+import worker1 from "./assets/worker1.avif";
+import worker2 from "./assets/worker2.avif";
 
 function App() {
   return (
@@ -71,6 +73,32 @@ function App() {
               이웃에 대한 공감, 동료를 향한 신뢰를 바탕으로 모두의 생활에
               <br />
               없어서는 안 될 최고의 서비스를 만들기 위해 노력해요.
+            </div>
+          </section>
+          <section className="worker vision">
+            <div className="worker img flex flex-row">
+              <img src={worker1} alt="회사원1"></img>
+              <img src={worker2} alt="회사원2"></img>
+            </div>
+            <div className="vision flex flex-row whitespace-pre-line">
+              <span className="w-1/2">
+                건설적인 비판과 피드백을 줄 수 있는 동료와 일하고 있어요. 모두가
+                <br />
+                자기가 제일 잘하는 분야에서 권한과 책임을 가진 리더에요. 하나의
+                <br />
+                서비스를 만들기 위해, 형식보단 일에 집중할 수 있는 환경 속에서
+                <br />
+                빠르게 성장하고 있어요.
+              </span>
+              <span className="w-1/2">
+                뛰어난 동료들과 최대한의 역량을 발휘하며 일하고 있어요. 이<br />
+                과정에서 프로덕트의 성장뿐만 아니라 개인의 성장까지 이뤄내고
+                <br />
+                있어요. 서비스 측면에서 시도해보고 싶은 기능을 자유롭게 제시하고
+                <br />
+                실현시킬 수 있는 곳이 당근마켓이에요.
+                <br />
+              </span>
             </div>
           </section>
         </div>
