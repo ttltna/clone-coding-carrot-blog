@@ -1,13 +1,12 @@
 import office from "./assets/office.avif";
 import worker1 from "./assets/worker1.avif";
-// import worker2 from "./assets/worker2.avif";
-// import teamCulture from "./assets/teamCulture.avif";
-// import together from "./assets/together.avif";
+import teamCulture from "./assets/teamCulture.avif";
+import together from "./assets/together.avif";
 
-// import { FaBeer } from "react-icons/fa";
-// import { BsArrowRightCircle } from "react-icons/bs";
-// import { TbMenu } from "react-icons/tb";
-// import { VscClose } from "react-icons/vsc";
+import { FiArrowRightCircle } from "react-icons/fi";
+import { CgArrowTopRight } from "react-icons/cg";
+import { AiFillGithub } from "react-icons/ai";
+import { SiMedium, SiInstagram, SiFacebook } from "react-icons/si";
 
 function App() {
   return (
@@ -50,8 +49,8 @@ function App() {
               </nav>
             </div>
           </header>
-          <main className="px-6 mt-100px">
-            <section>
+          <main className="mt-100px">
+            <section className="px-6">
               <div className="box-border m-auto max-w-75">
                 <h1 className="mb-88px text-3.375 leading-4.5625 font-bold whitespace-pre-line">
                   {`이웃과 더 가까워지는
@@ -68,7 +67,7 @@ function App() {
                 </p>
               </div>
             </section>
-            <section className="mt-[160px] flex flex-row">
+            <section className="mt-[160px] px-6 flex flex-row">
               <div className="team  font-bold w-[340px] flex flex-col mr-[38px]">
                 <span className="text-xl mb-[24px] h-[31px]">당근마켓 팀</span>
                 <h1 className="whitespace-pre-line text-2.625 leading-[3.5625rem] mb-8 tracking-tighter">
@@ -91,139 +90,171 @@ function App() {
             `}
               </div>
             </section>
-            <section>
+            <section className="px-6">
               <img
                 className="mt-[158px] w-full h-[420px]"
                 src={worker1}
                 alt="직원1"
               />
-              <p className="text-2xl font-bold leading-normal">
-                {`건설적인 비판과 피드백을 줄 수 있는 동료와 일하고 있어요.
+              <div className="">
+                <p className="text-[1.625rem] font-bold leading-normal my-[31px] whitespace-pre-line tracking-tight">
+                  {`건설적인 비판과 피드백을 줄 수 있는 동료와 일하고 있어요.
                 모두가 자기가 제일 잘하는 분야에서 권한과 책임을 가진
                 리더에요. 하나의 서비스를 만들기 위해, 형식보단 일에 집중할
                 수 있는 환경 속에서 빠르게 성장하고 있어요.`}
-              </p>
-              <p>Summer / Business Development Manager</p>
-              <div>
-                <button className="rounded-full bg-black">1</button>
-                <button className="rounded-full">2</button>
-                <button className="rounded-full">3</button>
-                <button className="rounded-full">4</button>
-                <button className="rounded-full">5</button>
-                <button className="rounded-full">6</button>
+                </p>
+                <p className="mb-[85px] text-[1.25rem] font-light">
+                  Summer / Business Development Manager
+                </p>
+              </div>
+              <div className="flex flex-row justify-center gap-8">
+                <button className="relative rounded-full border-6 border-solid border-black"></button>
+                <button className="relative rounded-full border-6 border-solid border-black"></button>
+                <button className="relative rounded-full border-6 border-solid border-black"></button>
+                <button className="relative rounded-full border-6 border-solid border-black"></button>
+                <button className="relative rounded-full border-6 border-solid border-black"></button>
+                <button className="relative rounded-full border-6 border-solid border-black"></button>
+              </div>
+            </section>
+            <section className="px-6">
+              <div className="mt-[160px] flex flex-row">
+                <div className="flex flex-col mr-[40px]">
+                  <h1 className="mb-[1.5rem] w-[340px] h-[31px] text-[1.25rem] leading-[1.9375rem] font-bold">
+                    팀 문화
+                  </h1>
+                  <span className="w-[340px] whitespace-pre-line text-[2.625rem] leading-[3.5625rem] mb-8 font-bold">
+                    {`우리는 함께
+                    성장할 수 있다고 믿어요`}
+                  </span>
+                  <span className="flex flex-row">
+                    <a
+                      className="font-bold text-[1.25rem] leading-[1.9375rem]"
+                      href="/"
+                      alt="팀 문화 자세히 보기"
+                    >
+                      자세히 보기
+                    </a>
+                    <a href="/" alt="팀 문화 자세히 보기">
+                      <FiArrowRightCircle className="w-[32px] h-[32px] ml-[0.5em]" />
+                    </a>
+                  </span>
+                </div>
+                <img
+                  className="w-[340px] h-[290px]"
+                  src={teamCulture}
+                  alt="팀 문화"
+                ></img>
+              </div>
+            </section>
+            <section>
+              <img
+                className="w-[768px] h-[240px] mt-[160px]"
+                src={together}
+                alt="함께 얘기하는 팀원들 모습"
+              />
+            </section>
+            <section className="px-6">
+              <div className="m-auto flex flex-col p-[100px]">
+                <h1 className="text-[2.625rem] leading-[3.5625rem] text-center font-bold tracking-thighter mb-[32px] whitespace-pre-line">
+                  {`지금, 당근마켓의 여정에
+                    함께하세요.`}
+                </h1>
+                <span className="flex flex-row justify-center text-[1.25rem] leading-[1.9375rem] font-bold">
+                  <a href="/" alt="채용공고 보러 가기">
+                    채용공고 보러 가기
+                  </a>
+                  <a href="/" alt="채용공고 보러 가기">
+                    <FiArrowRightCircle className="w-[32px] h-[32px] ml-[0.5em]" />
+                  </a>
+                </span>
               </div>
             </section>
           </main>
+
+          <footer className="mt-[10rem] pt-[4.375rem] pb-4 border-t-2 border-solid">
+            <section className="px-6">
+              <nav className="max-w-[75rem] m-auto flex flex-row items-center justify-between">
+                <ul className="flex flex-row text-[0.8125rem] w-[458px] justify-between">
+                  <li>
+                    <a className="flex flex-row font-bold" href="/">
+                      개인정보처리방침
+                      <CgArrowTopRight />
+                    </a>
+                  </li>
+                  <li>
+                    <a className="flex flex-row" href="/">
+                      브랜드 리소스
+                      <CgArrowTopRight />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">자주 묻는 질문</a>
+                  </li>
+                  <li>
+                    <a href="/">IR</a>
+                  </li>
+                </ul>
+                <ul className="w-[200px] flex flex-row  justify-between">
+                  <li>
+                    <a href="/" alt="깃허브 바로가기">
+                      <AiFillGithub className="w-[24px] h-[24px]" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/" alt="당근마켓 팀 블로그 바로가기">
+                      <SiMedium className="w-[24px] h-[24px]" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/" alt="페이스북 바로가기">
+                      <SiFacebook className="w-[24px] h-[24px]" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/" alt="인스타그램 바로가기">
+                      <SiInstagram className="w-[24px] h-[24px]" />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <div className="mt-[33px]">
+                <section className="flex flex-row flex-wrap text-[0.875rem] max-w-[37.5rem] text-[#868b94]">
+                  <div>
+                    <p>
+                      주소 : 서울특별시 서초구 강남대로 465, 교보강남타워 11층
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      (IR관련문의 :{" "}
+                      <a
+                        className="underline"
+                        href="#"
+                        alt="관련문의 이메일 주소"
+                      >
+                        ir@daangn.com
+                      </a>
+                      )
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      (채용 관련 문의 :
+                      <a className="underline" href="#">
+                        recruit@daangn.com
+                      </a>
+                      )
+                    </p>
+                  </div>
+                </section>
+                <p className="text-[0.8125rem] text-gray-500 mt-5 mb-20 font-bold">
+                  © 당근마켓
+                </p>
+              </div>
+            </section>
+          </footer>
         </div>
       </div>
-      {/* 
-        <section className="teamCulture flex flex-row my-20">
-          <div className="flex flex-col w-1/2">
-            <h1 className="font-bold text-2xl">팀 문화</h1>
-            <span className="whitespace-pre-line font-bold text-4xl my-5 leading-snug">
-              우리는 함께
-              <br />
-              성장할 수 있다고 믿어요
-            </span>
-            <span className="font-bold text-xl">
-              자세히 보기{" "}
-              <a href="#" alt="팀 문화 자세히 보기">
-                btn
-              </a>
-            </span>
-          </div>
-          <img className="w-1/2" src={teamCulture} alt="팀 문화"></img>
-        </section>
-      </div>
-      <img
-        className="my-20"
-        src={together}
-        alt="함께 얘기하는 팀원들 모습"
-      ></img>
-      <div className="inner mx-auto max-w-6xl">
-        <div className="Recruitment flex flex-col">
-          <h1 className="font-bold text-4xl text-center my-5">
-            지금, 당근마켓의 여정에 함께하세요.
-          </h1>
-          <span className="font-bold text-2xl text-center mb-20">
-            채용공고 보러 가기&nbsp;
-            <a href="#" alt="채용공고 보러 가기">
-              btn
-            </a>
-          </span>
-        </div>
-      </div>
-    </main>
-    <hr className="my-20"></hr>
-    <footer>
-      <div className="inner mx-auto max-w-6xl">
-        <nav className="flex flex-row justify-between mb-10">
-          <ul className="w-1/2 flex flex-row justify-between text-xs">
-            <li>
-              <a href="#" className="font-bold">
-                개인정보처리방침arrow
-              </a>
-            </li>
-            <li>
-              <a href="#">브랜드 리소스arrow</a>
-            </li>
-            <li>
-              <a href="#">자주 묻는 질문</a>
-            </li>
-            <li>
-              <a href="#">IR</a>
-            </li>
-          </ul>
-          <ul className="snsEmoji w-1/3 flex flex-row  justify-end">
-            <li>
-              <a
-                href="https://github.com/daangn"
-                target="_blank"
-                rel="noopener noreferrer"
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://medium.com/daangn"
-                target="_blank"
-                rel="noopener noreferrer"
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/daangn/"
-                target="_blank"
-                rel="noopener noreferrer"
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/daangnmarket/"
-                target="_blank"
-                rel="noopener noreferrer"
-              ></a>
-            </li>
-          </ul>
-        </nav>
-        <span className="text-sm whitespace-pre-line text-gray-500">
-          주소 : 서울특별시 서초구 강남대로 465, 교보강남타워 11층 (IR
-          관련문의 :{" "}
-          <a className="underline" href="#" alt="관련문의 이메일 주소">
-            ir@daangn.com
-          </a>
-          )
-          <br />
-          (채용 관련 문의 :{" "}
-          <a className="underline" href="#">
-            recruit@daangn.com
-          </a>
-          )
-        </span>
-        <p className="text-sm text-gray-500 mt-5 mb-20 font-bold">
-          © 당근마켓
-        </p>
-      </div>
-    </footer> */}
     </div>
   );
 }

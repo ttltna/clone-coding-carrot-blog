@@ -29,7 +29,6 @@ export default {
       colors: {
         carrothead: "#00B493",
         carrot: "#FF7E36",
-        menu: "#212124",
       },
       strokeWidth: {
         6: "6px",
@@ -40,10 +39,11 @@ export default {
         2.625: "2.625rem",
         3.375: "3.375rem",
       },
+      borderWidth: {
+        6: "6px",
+      },
     },
   },
-  corePlugins: {
-    aspectRatio: false,
-  },
-  plugins: [require("@tailwindcss/aspect-ratio")],
+  corePlugins: {},
+  plugins: [],
 };
