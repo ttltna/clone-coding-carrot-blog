@@ -13,6 +13,9 @@ import { AiFillGithub } from "react-icons/ai";
 import { SiMedium, SiInstagram, SiFacebook } from "react-icons/si";
 
 const RootPage = () => {
+  const btn1 = () => {};
+  const btn2 = () => {};
+  const btn3 = () => {};
   return (
     <>
       <main className="mt-100px">
@@ -56,15 +59,15 @@ const RootPage = () => {
             `}
           </div>
         </section>
-        <section className="px-6 border-box overflow-hidden box-border m-auto max-w-75">
-          <div className="flex flex-row">
-            <div className="flex flex-col">
+        <section className=" px-6 m-auto max-w-75 overflow-hidden">
+          <ul className="flex flex-row">
+            <li className="flex flex-col w-1/2 px-2 mr-5">
               <img
-                className="mt-[158px] w-full h-[420px]"
+                className="min-w-[217px] max-w-[925px]"
                 src={worker1}
                 alt="직원1"
               />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] whitespace-pre-line tracking-tight">
+              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
                 {`건설적인 비판과 피드백을 줄 수 있는 동료와 일하고 있어요.
                 모두가 자기가 제일 잘하는 분야에서 권한과 책임을 가진
                 리더에요. 하나의 서비스를 만들기 위해, 형식보단 일에 집중할
@@ -73,14 +76,14 @@ const RootPage = () => {
               <p className="mb-[85px] text-[1.25rem] font-light">
                 Summer / Business Development Manager
               </p>
-            </div>
-            <div className="flex flex-col">
+            </li>
+            <li className="flex flex-col w-1/2 px-2 mr-5">
               <img
-                className="mt-[158px] w-full h-[420px]"
+                className="min-w-[217px] max-w-[925px]"
                 src={worker2}
                 alt="직원2"
               />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] whitespace-pre-line tracking-tight">
+              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
                 {`뛰어난 동료들과 최대한의 역량을 발휘하며
                 일하고 있어요. 이 과정에서 프로덕트의
                 성장뿐만 아니라 개인의 성장까지 이뤄내고
@@ -91,14 +94,14 @@ const RootPage = () => {
               <p className="mb-[85px] text-[1.25rem] font-light">
                 David / Software Engineer
               </p>
-            </div>
-            <div className="flex flex-col">
+            </li>
+            <li className="flex flex-col w-1/2 px-2 mr-5">
               <img
-                className="mt-[158px] w-full h-[420px]"
+                className="min-w-[217px] max-w-[925px]"
                 src={worker3}
                 alt="직원3"
               />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] whitespace-pre-line tracking-tight">
+              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
                 {`사용자에게 사랑받는 제품을 설계하는 가슴 뛰는
                 일을 하고 있어요. 최고의 사용자 경험을 위해
                 고민하고 어떤 문제를 어떻게 풀지 주도적으로
@@ -109,14 +112,14 @@ const RootPage = () => {
               <p className="mb-[85px] text-[1.25rem] font-light">
                 Zoe / Product Designer
               </p>
-            </div>
-            <div className="flex flex-col">
+            </li>
+            <li className="flex flex-col w-1/2 px-2 mr-5">
               <img
-                className="mt-[158px] w-full h-[420px]"
+                className="min-w-[217px] max-w-[925px]"
                 src={worker4}
                 alt="직원4"
               />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] whitespace-pre-line tracking-tight">
+              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
                 {`플랫폼이 성장하면서 많은 요청을 처리하기 위해
                 아키텍처가 변화하고 있어요. 이로 인해 다양한
                 시도와 학습은 필수적이에요. 당근마켓 팀은
@@ -127,14 +130,14 @@ const RootPage = () => {
               <p className="mb-[85px] text-[1.25rem] font-light">
                 Bien / Software Engineer
               </p>
-            </div>
-            <div className="flex flex-col">
+            </li>
+            <li className="flex flex-col w-1/2 px-2 mr-5">
               <img
-                className="mt-[158px] w-full h-[420px]"
+                className="min-w-[217px] max-w-[925px]"
                 src={worker5}
                 alt="직원5"
               />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] whitespace-pre-line tracking-tight">
+              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
                 {`사용자에게 사랑받는 프로덕트를 만드는 것 만한
                 재미가 있을까요? 한국과 글로벌 사용자들이
                 겪는 문제를 파고들어 해결책을 찾는 과정
@@ -145,14 +148,14 @@ const RootPage = () => {
               <p className="mb-[85px] text-[1.25rem] font-light">
                 Eddie / Global Product Manager
               </p>
-            </div>
-            <div className="flex flex-col">
+            </li>
+            <li className="flex flex-col w-1/2 px-2 mr-5">
               <img
-                className="mt-[158px] w-full h-[420px]"
+                className="min-w-[217px] max-w-[925px]"
                 src={worker6}
                 alt="직원6"
               />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] whitespace-pre-line tracking-tight">
+              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
                 {`오늘도 마케팅팀은 '우리 사용자들은 어떤 것에
                 공감할까?'에 대한 끊임없는 고민을 하고 있어요.
                 사용자 중심으로 사고하며 당근마켓 브랜드와
@@ -163,20 +166,26 @@ const RootPage = () => {
               <p className="mb-[85px] text-[1.25rem] font-light">
                 Nicole / Marketing Lead
               </p>
-            </div>
-          </div>
+            </li>
+          </ul>
           <div className="flex flex-row justify-center gap-8">
-            <button className="relative rounded-full border-6 border-solid border-black"></button>
-            <button className="relative rounded-full border-6 border-solid border-black"></button>
-            <button className="relative rounded-full border-6 border-solid border-black"></button>
-            <button className="relative rounded-full border-6 border-solid border-black"></button>
-            <button className="relative rounded-full border-6 border-solid border-black"></button>
-            <button className="relative rounded-full border-6 border-solid border-black"></button>
+            <button
+              className="relative rounded-full border-6 border-solid border-black"
+              onClick={btn1}
+            ></button>
+            <button
+              className="relative rounded-full border-6 border-solid border-black"
+              onClick={btn2}
+            ></button>
+            <button
+              className="relative rounded-full border-6 border-solid border-black"
+              onClick={btn3}
+            ></button>
           </div>
         </section>
         <section className="px-6">
           <div className="mt-[160px] flex flex-row">
-            <div className="flex flex-col mr-[40px]">
+            <div className="flex flex-col">
               <h1 className="mb-[1.5rem] w-[340px] h-[31px] text-[1.25rem] leading-[1.9375rem] font-bold">
                 팀 문화
               </h1>
