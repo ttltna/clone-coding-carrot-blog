@@ -11,11 +11,100 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import { CgArrowTopRight } from "react-icons/cg";
 import { AiFillGithub } from "react-icons/ai";
 import { SiMedium, SiInstagram, SiFacebook } from "react-icons/si";
+import { useRef } from "react";
+
+const WorkerSpeech = () => {
+  const turn = [0, 1, 2, 3, 4, 5];
+  const workers = [worker1, worker2, worker3, worker4, worker5, worker6];
+  const speech = [
+    `건설적인 비판과 피드백을 줄 수 있는 동료와 일하고 있어요.
+    모두가 자기가 제일 잘하는 분야에서 권한과 책임을 가진 리더에요.
+    하나의 서비스를 만들기 위해, 형식보단 일에 집중할 수 있는 환경 속에서 빠르게 성장하고 있어요.`,
+    `뛰어난 동료들과 최대한의 역량을 발휘하며 일하고 있어요.
+  이 과정에서 프로덕트의 성장뿐만 아니라 개인의 성장까지 이뤄내고 있어요.
+  서비스 측면에서 시도해보고 싶은 기능을 자유롭게 제시하고 실현시킬 수 있는 곳이 당근마켓이에요.`,
+
+    `사용자에게 사랑받는 제품을 설계하는 가슴 뛰는 일을 하고 있어요.
+  최고의 사용자 경험을 위해 고민하고 어떤 문제를 어떻게 풀지 주도적으로 정할 수 있어요.
+  더 큰 비즈니스 임팩트를 내기 위해 치열하게 고민해 볼 수 있는 게 큰 장점이에요.`,
+
+    `플랫폼이 성장하면서 많은 요청을 처리하기 위해 아키텍처가 변화하고 있어요.
+  이로 인해 다양한 시도와 학습은 필수적이에요.
+  당근마켓 팀은 이런 문제들을 해결하기 위해 끊임없이 학습하고,
+  새로운 시도와 개선을 하며 하루하루 성장하고 있어요.`,
+
+    `사용자에게 사랑받는 프로덕트를 만드는 것 만한 재미가 있을까요?
+  한국과 글로벌 사용자들이 겪는 문제를 파고들어 해결책을 찾는 과정 자체가 즐거움이자 보상이에요.
+  사용자 입장에서 생각하는 동료들과 함께하기에 작은 실패들을 쌓아 큰 성공을 향해가고 있다고 믿을 수 있어요.`,
+
+    `오늘도 마케팅팀은 '우리 사용자들은 어떤 것에 공감할까?'에 대한 끊임없는 고민을 하고 있어요.
+  사용자 중심으로 사고하며 당근마켓 브랜드와 사용자 사이에 정서적인 연결을 만들어내는 일.
+  이것만큼 마케터에게 지속 성장의 가치와 재미를 전달해주는 일이 있을까요?`,
+  ];
+  const workerName = [
+    `Summer / Business Development Manager`,
+    `David / Software Engineer`,
+    `Zoe / Product Designer`,
+    `Bien / Software Engineer`,
+    `Eddie / Global Product Manager`,
+    `Nicole / Marketing Lead `,
+  ];
+  return (
+    // 이미지가 1200해상도부턴 가로 556px 고정
+    // 992해상도 2개 이미지가 나오는데 452
+    // 991해상도부터 이미지 1개 가장 이미지가 클때이고 943px
+    // 265해상도부터 217.047px 고정
+
+    //320해상 272
+    //375 327
+    //425 377
+    //768 720 md
+    //1024 468 lg
+    //1440 556
+
+    // mobile_S:w-[272px] mobile_M:w-[327px] mobile_L:w-[377px] md:w-[720px] lg:w-[468px] Laptop_L:w-[556px]
+    <>
+      {turn.map((num) => (
+        <>
+          <li className="flex flex-col w-1/2 mr-9">
+            <img
+              className=" min-w-[217px] max-w-[943px]"
+              src={workers[num]}
+              alt={`직원` + (num + 1)}
+            />
+            <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
+              {speech[num]}
+            </p>
+            <p className="mb-[85px] text-[1.25rem] font-light">
+              {workerName[num]}
+            </p>
+          </li>
+        </>
+      ))}
+    </>
+  );
+};
 
 const RootPage = () => {
-  const btn1 = () => {};
-  const btn2 = () => {};
-  const btn3 = () => {};
+  const carousel = useRef();
+  const btn1 = () => {
+    carousel.current.className.match("translate")
+      ? (carousel.current.className =
+          "flex flex-row  translate-x-0 duration-500")
+      : (carousel.current.className += " translate-x-0 duration-500");
+  };
+  const btn2 = () => {
+    carousel.current.className.match("translate")
+      ? (carousel.current.className =
+          "flex flex-row  translate-x-[-105%] duration-500")
+      : (carousel.current.className += " translate-x-[-105%] duration-500");
+  };
+  const btn3 = () => {
+    carousel.current.className.match("translate")
+      ? (carousel.current.className =
+          "flex flex-row  translate-x-[-207%] duration-500")
+      : (carousel.current.className += " translate-x-[-207%] duration-500");
+  };
   return (
     <>
       <main className="mt-100px">
@@ -60,113 +149,8 @@ const RootPage = () => {
           </div>
         </section>
         <section className=" px-6 m-auto max-w-75 overflow-hidden">
-          <ul className="flex flex-row">
-            <li className="flex flex-col w-1/2 px-2 mr-5">
-              <img
-                className="min-w-[217px] max-w-[925px]"
-                src={worker1}
-                alt="직원1"
-              />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
-                {`건설적인 비판과 피드백을 줄 수 있는 동료와 일하고 있어요.
-                모두가 자기가 제일 잘하는 분야에서 권한과 책임을 가진
-                리더에요. 하나의 서비스를 만들기 위해, 형식보단 일에 집중할
-                수 있는 환경 속에서 빠르게 성장하고 있어요.`}
-              </p>
-              <p className="mb-[85px] text-[1.25rem] font-light">
-                Summer / Business Development Manager
-              </p>
-            </li>
-            <li className="flex flex-col w-1/2 px-2 mr-5">
-              <img
-                className="min-w-[217px] max-w-[925px]"
-                src={worker2}
-                alt="직원2"
-              />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
-                {`뛰어난 동료들과 최대한의 역량을 발휘하며
-                일하고 있어요. 이 과정에서 프로덕트의
-                성장뿐만 아니라 개인의 성장까지 이뤄내고
-                있어요. 서비스 측면에서 시도해보고 싶은
-                기능을 자유롭게 제시하고 실현시킬 수 있는
-                곳이 당근마켓이에요.`}
-              </p>
-              <p className="mb-[85px] text-[1.25rem] font-light">
-                David / Software Engineer
-              </p>
-            </li>
-            <li className="flex flex-col w-1/2 px-2 mr-5">
-              <img
-                className="min-w-[217px] max-w-[925px]"
-                src={worker3}
-                alt="직원3"
-              />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
-                {`사용자에게 사랑받는 제품을 설계하는 가슴 뛰는
-                일을 하고 있어요. 최고의 사용자 경험을 위해
-                고민하고 어떤 문제를 어떻게 풀지 주도적으로
-                정할 수 있어요. 더 큰 비즈니스 임팩트를 내기
-                위해 치열하게 고민해 볼 수 있는 게 큰
-                장점이에요.`}
-              </p>
-              <p className="mb-[85px] text-[1.25rem] font-light">
-                Zoe / Product Designer
-              </p>
-            </li>
-            <li className="flex flex-col w-1/2 px-2 mr-5">
-              <img
-                className="min-w-[217px] max-w-[925px]"
-                src={worker4}
-                alt="직원4"
-              />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
-                {`플랫폼이 성장하면서 많은 요청을 처리하기 위해
-                아키텍처가 변화하고 있어요. 이로 인해 다양한
-                시도와 학습은 필수적이에요. 당근마켓 팀은
-                이런 문제들을 해결하기 위해 끊임없이
-                학습하고, 새로운 시도와 개선을 하며 하루하루
-                성장하고 있어요.`}
-              </p>
-              <p className="mb-[85px] text-[1.25rem] font-light">
-                Bien / Software Engineer
-              </p>
-            </li>
-            <li className="flex flex-col w-1/2 px-2 mr-5">
-              <img
-                className="min-w-[217px] max-w-[925px]"
-                src={worker5}
-                alt="직원5"
-              />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
-                {`사용자에게 사랑받는 프로덕트를 만드는 것 만한
-                재미가 있을까요? 한국과 글로벌 사용자들이
-                겪는 문제를 파고들어 해결책을 찾는 과정
-                자체가 즐거움이자 보상이에요. 사용자 입장에서
-                생각하는 동료들과 함께하기에 작은 실패들을
-                쌓아 큰 성공을 향해가고 있다고 믿을 수 있어요.`}
-              </p>
-              <p className="mb-[85px] text-[1.25rem] font-light">
-                Eddie / Global Product Manager
-              </p>
-            </li>
-            <li className="flex flex-col w-1/2 px-2 mr-5">
-              <img
-                className="min-w-[217px] max-w-[925px]"
-                src={worker6}
-                alt="직원6"
-              />
-              <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
-                {`오늘도 마케팅팀은 '우리 사용자들은 어떤 것에
-                공감할까?'에 대한 끊임없는 고민을 하고 있어요.
-                사용자 중심으로 사고하며 당근마켓 브랜드와
-                사용자 사이에 정서적인 연결을 만들어내는 일.
-                이것만큼 마케터에게 지속 성장의 가치와 재미를
-                전달해주는 일이 있을까요?`}
-              </p>
-              <p className="mb-[85px] text-[1.25rem] font-light">
-                Nicole / Marketing Lead
-              </p>
-            </li>
+          <ul className="flex flex-row" ref={carousel}>
+            <WorkerSpeech />
           </ul>
           <div className="flex flex-row justify-center gap-8">
             <button

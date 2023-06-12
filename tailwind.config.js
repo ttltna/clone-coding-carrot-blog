@@ -7,6 +7,12 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        mobile_S: "320px",
+        mobile_M: "375px",
+        mobile_L: "425px",
+        Laptop_L: "1440px",
+      },
       margin: {
         "88px": "88px",
         "100px": "100px",
