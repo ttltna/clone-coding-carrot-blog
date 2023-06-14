@@ -124,7 +124,7 @@ function App() {
             </div>
           </section>
           <section className="px-6">
-            <div className="mt-[160px] flex flex-row">
+            <div className="mt-[160px] flex justify-center">
               <div className="flex flex-col mr-[40px]">
                 <h1 className="mb-[1.5rem] w-[340px] h-[31px] text-[1.25rem] leading-[1.9375rem] font-bold">
                   팀 문화

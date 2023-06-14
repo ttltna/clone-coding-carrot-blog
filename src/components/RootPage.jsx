@@ -11,7 +11,7 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import { CgArrowTopRight } from "react-icons/cg";
 import { AiFillGithub } from "react-icons/ai";
 import { SiMedium, SiInstagram, SiFacebook } from "react-icons/si";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const WorkerSpeech = () => {
   const turn = [0, 1, 2, 3, 4, 5];
@@ -66,9 +66,9 @@ const WorkerSpeech = () => {
     <>
       {turn.map((num) => (
         <>
-          <li className="flex flex-col w-1/2 mr-9">
+          <li className="flex flex-col mr-9">
             <img
-              className=" min-w-[217px] max-w-[943px]"
+              className="min-w-[217px] max-w-[943px]"
               src={workers[num]}
               alt={`직원` + (num + 1)}
             />
@@ -86,29 +86,47 @@ const WorkerSpeech = () => {
 };
 
 const RootPage = () => {
+  const [windowScreen, setWindowScreen] = useState({
+    width: window && window.innerWidth,
+    height: window && window.innerHeight,
+  });
+
+  const handleResize = () => {
+    setWindowScreen((prev) => ({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    }));
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [windowScreen]);
+
   const carousel = useRef();
+
   const btn1 = () => {
+    console.log(windowScreen);
     carousel.current.className.match("translate")
-      ? (carousel.current.className =
-          "flex flex-row  translate-x-0 duration-500")
-      : (carousel.current.className += " translate-x-0 duration-500");
+      ? (carousel.current.className = `flex flex-row  translate-x-0 duration-500`)
+      : (carousel.current.className += ` translate-x-0 duration-500`);
   };
   const btn2 = () => {
     carousel.current.className.match("translate")
-      ? (carousel.current.className =
-          "flex flex-row  translate-x-[-105%] duration-500")
-      : (carousel.current.className += " translate-x-[-105%] duration-500");
+      ? (carousel.current.className = `flex flex-row  translate-x-[-1190px] duration-500`)
+      : (carousel.current.className += ` translate-x-[-1190px] duration-500`);
   };
   const btn3 = () => {
     carousel.current.className.match("translate")
-      ? (carousel.current.className =
-          "flex flex-row  translate-x-[-207%] duration-500")
-      : (carousel.current.className += " translate-x-[-207%] duration-500");
+      ? (carousel.current.className = `flex flex-row  translate-x-[-2380px] duration-500`)
+      : (carousel.current.className += ` translate-x-[-2380px] duration-500`);
   };
   return (
     <>
-      <main className="mt-100px">
-        <section className="px-6">
+      <main className="mt-100px px-6">
+        <section className="">
           <div className="box-border m-auto max-w-75">
             <h1 className="mb-88px text-3.375 leading-4.5625 font-bold whitespace-pre-line">
               {`이웃과 더 가까워지는
@@ -125,7 +143,7 @@ const RootPage = () => {
             </p>
           </div>
         </section>
-        <section className="mt-[160px] px-6 box-border m-auto max-w-75 flex flex-row">
+        <section className="mt-[160px]  box-border m-auto max-w-75 flex flex-row">
           <div className="team  font-bold w-[340px] flex flex-col mr-[38px]">
             <span className="text-xl mb-[24px] h-[31px]">당근마켓 팀</span>
             <h1 className="whitespace-pre-line text-2.625 leading-[3.5625rem] mb-8 tracking-tighter">
@@ -148,7 +166,7 @@ const RootPage = () => {
             `}
           </div>
         </section>
-        <section className=" px-6 m-auto max-w-75 overflow-hidden">
+        <section className="  m-auto max-w-75 overflow-hidden">
           <ul className="flex flex-row" ref={carousel}>
             <WorkerSpeech />
           </ul>
@@ -167,9 +185,9 @@ const RootPage = () => {
             ></button>
           </div>
         </section>
-        <section className="px-6">
-          <div className="mt-[160px] flex flex-row">
-            <div className="flex flex-col">
+        <section className="w-full max-w-75 ">
+          <div className="h-[500px] flex mt-[160px]">
+            <div className=" h-full flex flex-col">
               <h1 className="mb-[1.5rem] w-[340px] h-[31px] text-[1.25rem] leading-[1.9375rem] font-bold">
                 팀 문화
               </h1>
@@ -191,12 +209,16 @@ const RootPage = () => {
               </span>
             </div>
             <img
-              className="w-[340px] h-[290px]"
-              src={teamCulture}
+              className="w-full h-full"
+              src={
+                "https://about.daangn.com/static/ef5b621725b6ecd6d35f063a503bf67a/66698/125e51c5-e9e4-4f0b-a20c-681fb23fcfa6_photo_16.avif"
+              }
               alt="팀 문화"
             ></img>
           </div>
         </section>
+      </main>
+      <div>
         <section>
           <img
             className="w-[768px] h-[240px] mt-[160px]"
@@ -204,7 +226,7 @@ const RootPage = () => {
             alt="함께 얘기하는 팀원들 모습"
           />
         </section>
-        <section className="px-6">
+        <section className="">
           <div className="m-auto flex flex-col py-[100px]">
             <h1 className="text-[2.625rem] leading-[3.5625rem] text-center font-bold tracking-thighter mb-[32px] whitespace-pre-line">
               {`지금, 당근마켓의 여정에
@@ -220,7 +242,7 @@ const RootPage = () => {
             </span>
           </div>
         </section>
-      </main>
+      </div>
       <footer className="mt-[10rem] pt-[4.375rem] pb-4 border-t-2 border-solid">
         <section className="px-6">
           <nav className="max-w-[75rem] m-auto flex flex-row items-center justify-between">

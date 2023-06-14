@@ -12,6 +12,8 @@ export default {
         mobile_M: "375px",
         mobile_L: "425px",
         Laptop_L: "1440px",
+        Show_One_Img: "991px",
+        Show_Two_Img: "992px",
       },
       margin: {
         "88px": "88px",
