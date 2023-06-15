@@ -2,7 +2,10 @@ import office from "../assets/office.avif";
 
 import teamCulture from "../assets/teamCulture.avif";
 import together from "../assets/together.avif";
+
+FiArrowRightCircle;
 import { FiArrowRightCircle } from "react-icons/fi";
+import { TfiArrowCircleLeft, TfiArrowCircleRight } from "react-icons/tfi";
 
 import META from "../utils/consts/contents";
 
@@ -47,24 +50,48 @@ const About = () => {
 };
 
 const Culture = () => {
+  const {
+    CULTURE: { TEAMCULTURE, DESCRIPTION, DETAIL },
+    VALUE: { INTERVIEW },
+  } = META.HOME;
   return (
     <>
-      <section className="  m-auto max-w-75 overflow-hidden">
-        <ul className="flex flex-row"></ul>
-        <div className="flex flex-row justify-center gap-8">
-          <button className="relative rounded-full border-6 border-solid border-black"></button>
-          <button className="relative rounded-full border-6 border-solid border-black"></button>
-          <button className="relative rounded-full border-6 border-solid border-black"></button>
+      <section className="mt-40">
+        <div className="flex justify-between gap-10">
+          <div className="flex items-center justify-center">
+            <TfiArrowCircleLeft size={52} />
+          </div>
+          <ul className="w-full flex overflow-hidden">
+            <div className="flex justify-center gap-20">
+              {[
+                ...INTERVIEW.map(({ CONTENT, NICKNAME, TITLE, PATH }) => (
+                  <li
+                    className="w-[600px] flex flex-col"
+                    key={`${(NICKNAME, TITLE)}`}
+                  >
+                    <img src={PATH}></img>
+                    <h2>{CONTENT}</h2>
+                    <div>
+                      <span>{NICKNAME}</span> / <span>{TITLE}</span>
+                    </div>
+                  </li>
+                )),
+              ]}
+            </div>
+          </ul>
+          <div className="flex items-center justify-center">
+            <TfiArrowCircleRight size={52} />
+          </div>
         </div>
       </section>
       <section className="w-full max-w-75 ">
         <div className="h-[500px] flex mt-[160px]">
           <div className=" h-full flex flex-col">
             <h1 className="mb-[1.5rem] w-[340px] h-[31px] text-[1.25rem] leading-[1.9375rem] font-bold">
-              {META.HOME.CULTURE.TEAMCULTURE}
+              {TEAMCULTURE}
             </h1>
             <span className="w-[340px] whitespace-pre-line text-[2.625rem] leading-[3.5625rem] mb-8 font-bold">
-              {META.HOME.CULTURE.DESCRIPTION}
+              {DESCRIPTION}
             </span>
             <span className="flex flex-row">
               <a
@@ -72,7 +99,7 @@ const Culture = () => {
                 href="/culture"
                 alt="팀 문화 자세히 보기"
               >
-                {META.HOME.CULTURE.DETAIL}
+                {DETAIL}
               </a>
               <a href="/culture" alt="팀 문화 자세히 보기">
                 <FiArrowRightCircle className="w-[32px] h-[32px] ml-[0.5em]" />
@@ -117,13 +144,13 @@ const Recruit = () => {
 
 const Home = () => {
   return (
-    <main className="w-screen max-w-75 h-full">
-      <div className="mt-28">
+    <main className="w-screen h-full">
+      <div className="mt-28 max-w-75 m-auto">
         <Description />
         <About />
-        <Culture />
       </div>
-      <div>
+      <div className="w-full max-w-[1400px] m-auto">
+        <Culture />
         <Recruit />
       </div>
     </main>
