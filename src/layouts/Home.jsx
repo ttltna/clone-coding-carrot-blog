@@ -70,8 +70,12 @@ const Culture = () => {
                     key={`${(NICKNAME, TITLE)}`}
                   >
                     <img src={PATH}></img>
-                    <h2>{CONTENT}</h2>
-                    <div>
+                    <div className="mt-10 w-10/12">
+                      <h2 className="font-bold text-2xl leading-relaxed break-words">
+                        {CONTENT}
+                      </h2>
+                    </div>
+                    <div className="mt-6 text-xl text-gray-500">
                       <span>{NICKNAME}</span> / <span>{TITLE}</span>
                     </div>
                   </li>
