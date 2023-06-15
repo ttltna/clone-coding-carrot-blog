@@ -3,11 +3,9 @@ import office from "../assets/office.avif";
 import teamCulture from "../assets/teamCulture.avif";
 import together from "../assets/together.avif";
 import { FiArrowRightCircle } from "react-icons/fi";
-import { CgArrowTopRight } from "react-icons/cg";
-import { AiFillGithub } from "react-icons/ai";
-import { SiMedium, SiInstagram, SiFacebook } from "react-icons/si";
 
 import META from "../utils/consts/contents";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -99,75 +97,7 @@ const Home = () => {
           </div>
         </section>
       </div>
-      <footer className="mt-[10rem] pt-[4.375rem] pb-4 border-t-2 border-solid">
-        <section className="px-6">
-          <nav className="max-w-[75rem] m-auto flex flex-row items-center justify-between">
-            <ul className="flex flex-row text-[0.8125rem] w-[458px] justify-between">
-              <li>
-                <a className="flex flex-row font-bold" href="/">
-                  {META.HOME.FOOTER.POLICY}
-                  <CgArrowTopRight />
-                </a>
-              </li>
-              <li>
-                <a className="flex flex-row" href="/">
-                  {META.HOME.FOOTER.RESOURCE}
-                  <CgArrowTopRight />
-                </a>
-              </li>
-              <li>
-                <a href="/">{META.HOME.FOOTER.QNA}</a>
-              </li>
-              <li>
-                <a href="/">{META.HOME.FOOTER.IR}</a>
-              </li>
-            </ul>
-            <ul className="w-[200px] flex flex-row  justify-between">
-              <li>
-                <a href="/" alt="깃허브 바로가기">
-                  <AiFillGithub className="w-[24px] h-[24px]" />
-                </a>
-              </li>
-              <li>
-                <a href="/" alt="당근마켓 팀 블로그 바로가기">
-                  <SiMedium className="w-[24px] h-[24px]" />
-                </a>
-              </li>
-              <li>
-                <a href="/" alt="페이스북 바로가기">
-                  <SiFacebook className="w-[24px] h-[24px]" />
-                </a>
-              </li>
-              <li>
-                <a href="/" alt="인스타그램 바로가기">
-                  <SiInstagram className="w-[24px] h-[24px]" />
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div className="mt-[33px]">
-            <section className="flex flex-row flex-wrap text-[0.875rem] max-w-[37.5rem] text-[#868b94]">
-              <p>
-                {META.HOME.FOOTER.ADDRESS}
-                <a className="underline" href="#" alt="관련문의 이메일 주소">
-                  {META.HOME.FOOTER.IREMAILADDRESS}
-                </a>
-                )
-              </p>
-              <p>
-                {META.HOME.FOOTER.JOBQNA}
-                <a className="underline" href="#">
-                  {META.HOME.FOOTER.JOBEMAILADDRESS}
-                </a>
-                )
-              </p>
-            </section>
-            <p className="text-[0.8125rem] text-gray-500 mt-5 mb-20 font-bold">
-              {META.HOME.FOOTER.COMPANY}
-            </p>
-          </div>
-        </section>
-      </footer>
+      <Footer />
     </>
   );
 };
