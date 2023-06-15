@@ -4,7 +4,7 @@ const Header = () => {
   const navigationList = Object.keys(NAVIGATOR);
 
   return (
-    <header className="w-full h-68px bg-white m-0 sticky top-0 z-10 ">
+    <header className="w-screen max-w-75 h-68px bg-white m-0 sticky top-0 z-10 ">
       <div className="h-full flex justify-between items-center">
         <a href="/" className="leading-0 text-carrot m-0 cursor-pointer">
           <svg viewBox="0 0 159 32" className="fill-none h-8 m-0">
@@ -23,7 +23,7 @@ const Header = () => {
           </svg>
         </a>
         <nav>
-          <ul className="flex items-center gap-14">
+          <ul className="flex items-center justify-center gap-14">
             {[...navigationList].map((value, index) => (
               <>
                 <li key={`${value}_${index}`} className="font-semibold">

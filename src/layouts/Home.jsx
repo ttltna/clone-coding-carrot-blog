@@ -11,14 +11,18 @@ const Description = () => {
 
   return (
     <section>
-      <div className=" max-w-75">
-        <h1 className="mb-88px text-3.375 leading-4.5625 font-bold whitespace-pre-line">
+      <div className="w-full">
+        <h1 className=" text-6xl font-semibold whitespace-pre-line leading-4.5625">
           {TITLE}
         </h1>
-        <img className="mb-12" src={office} alt="사무실 풍경" />
-        <p className="whitespace-pre-line text-1.625 leading-2.4375 box-border m-auto font-bold tracking-tight">
-          {DESCRIPTION}
-        </p>
+        <div className="mt-24">
+          <img className="w-full h-full" src={office} alt="사무실 풍경" />
+        </div>
+        <div className="w-2/3">
+          <p className="w-full mt-10 text-2xl box-border font-medium leading-2.4375 break-words">
+            {DESCRIPTION}
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -113,7 +117,7 @@ const Recruit = () => {
 
 const Home = () => {
   return (
-    <main className="w-screen h-full">
+    <main className="w-screen max-w-75 h-full">
       <div className="mt-28">
         <Description />
         <About />

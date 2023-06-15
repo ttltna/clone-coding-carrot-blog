@@ -7,7 +7,7 @@ import { Fragment } from "react";
 function App() {
   return (
     <Fragment>
-      <div className="mx-72 flex flex-col justify-center">
+      <div className="flex flex-col items-center">
         <Header />
         <Outlet />
         <Footer />
