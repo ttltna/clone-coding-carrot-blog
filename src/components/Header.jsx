@@ -1,9 +1,11 @@
 import NAVIGATOR from "../utils/consts/navigator";
 
 const Header = () => {
+  const navigationList = Object.keys(NAVIGATOR);
+
   return (
-    <header className="w-screen h-68px bg-white m-0 sticky top-0 z-10">
-      <div className="box-border max-w-75 m-auto px-6 h-68px flex flex-row justify-between items-center">
+    <header className="w-full h-68px bg-white m-0 sticky top-0 z-10 ">
+      <div className="h-full flex justify-between items-center">
         <a href="/" className="leading-0 text-carrot m-0 cursor-pointer">
           <svg viewBox="0 0 159 32" className="fill-none h-8 m-0">
             <path
@@ -20,20 +22,15 @@ const Header = () => {
             ></path>
           </svg>
         </a>
-        <nav className="m-0 block">
-          <ul className="flex flex-row items-center gap-14 relative p-0 m-0">
-            <li className="font-bold">
-              <a href="/culture">{NAVIGATOR.CULTURE}</a>
-            </li>
-            <li className="font-bold">
-              <a href="/service">{NAVIGATOR.SERVICE}</a>
-            </li>
-            <li className="font-bold">
-              <a href="/jobs">{NAVIGATOR.RECRUIT}</a>
-            </li>
-            <li className="font-bold">
-              <a href="/blog">{NAVIGATOR.BLOG}</a>
-            </li>
+        <nav>
+          <ul className="flex items-center gap-14">
+            {[...navigationList].map((value, index) => (
+              <>
+                <li key={`${value}_${index}`} className="font-semibold">
+                  <a href={`/${value.toLowerCase()}`}>{NAVIGATOR[value]}</a>
+                </li>
+              </>
+            ))}
           </ul>
         </nav>
       </div>

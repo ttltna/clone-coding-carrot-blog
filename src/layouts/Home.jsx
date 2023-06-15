@@ -7,15 +7,17 @@ import { FiArrowRightCircle } from "react-icons/fi";
 import META from "../utils/consts/contents";
 
 const Description = () => {
+  const { TITLE, DESCRIPTION } = META.HOME.INTRODUCE;
+
   return (
-    <section className="">
-      <div className="box-border m-auto max-w-75">
+    <section>
+      <div className=" max-w-75">
         <h1 className="mb-88px text-3.375 leading-4.5625 font-bold whitespace-pre-line">
-          {META.HOME.INTRODUCE.TITLE}
+          {TITLE}
         </h1>
         <img className="mb-12" src={office} alt="사무실 풍경" />
         <p className="whitespace-pre-line text-1.625 leading-2.4375 box-border m-auto font-bold tracking-tight">
-          {META.HOME.INTRODUCE.DESCRIPTION}
+          {DESCRIPTION}
         </p>
       </div>
     </section>
@@ -111,8 +113,8 @@ const Recruit = () => {
 
 const Home = () => {
   return (
-    <main>
-      <div>
+    <main className="w-screen h-full">
+      <div className="mt-28">
         <Description />
         <About />
         <Culture />
