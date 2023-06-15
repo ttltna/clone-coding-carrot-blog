@@ -11,15 +11,15 @@ const Description = () => {
 
   return (
     <section>
-      <div className="w-full">
-        <h1 className=" text-6xl font-semibold whitespace-pre-line leading-4.5625">
+      <div>
+        <h1 className="text-6xl font-semibold whitespace-pre-line leading-4.5625">
           {TITLE}
         </h1>
         <div className="mt-24">
           <img className="w-full h-full" src={office} alt="사무실 풍경" />
         </div>
-        <div className="w-2/3">
-          <p className="w-full mt-10 text-2xl box-border font-medium leading-2.4375 break-words">
+        <div className="w-7/12">
+          <p className="w-full mt-10 text-2xl box-border  leading-[39px] font-semibold break-words">
             {DESCRIPTION}
           </p>
         </div>
@@ -29,18 +29,18 @@ const Description = () => {
 };
 
 const About = () => {
+  const { TEAM, TARGET, DESCRIPTION } = META.HOME.VALUE;
+
   return (
-    <section className="mt-[160px]  box-border m-auto max-w-75 flex flex-row">
-      <div className="team  font-bold w-[340px] flex flex-col mr-[38px]">
-        <span className="text-xl mb-[24px] h-[31px]">
-          {META.HOME.VALUE.TEAM}
-        </span>
-        <h1 className="whitespace-pre-line text-2.625 leading-[3.5625rem] mb-8 tracking-tighter">
-          {META.HOME.VALUE.TARGET}
+    <section className="mt-40 w-full flex justify-between">
+      <div className="flex flex-col w-full">
+        <div className="text-xl font-semibold">{TEAM}</div>
+        <h1 className="mt-8 text-4xl font-semibold leading-[54px] whitespace-pre-line">
+          {TARGET}
         </h1>
       </div>
-      <div className="effort text-[1.125rem] whitespace-pre-line w-[340px] mb-[2.5rem] leading-[1.875rem] tracking-tight">
-        {META.HOME.VALUE.DESCRIPTION}
+      <div className="w-full text-lg leading-8 text-gray-500">
+        {DESCRIPTION}
       </div>
     </section>
   );
