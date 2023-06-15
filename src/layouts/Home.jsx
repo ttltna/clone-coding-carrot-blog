@@ -1,113 +1,15 @@
 import office from "../assets/office.avif";
-import worker1 from "../assets/worker1.avif";
-import worker2 from "../assets/worker2.avif";
-import worker3 from "../assets/worker3.avif";
-import worker4 from "../assets/worker4.avif";
-import worker5 from "../assets/worker5.avif";
-import worker6 from "../assets/worker6.avif";
+
 import teamCulture from "../assets/teamCulture.avif";
 import together from "../assets/together.avif";
 import { FiArrowRightCircle } from "react-icons/fi";
 import { CgArrowTopRight } from "react-icons/cg";
 import { AiFillGithub } from "react-icons/ai";
 import { SiMedium, SiInstagram, SiFacebook } from "react-icons/si";
-import { useRef, useState, useEffect } from "react";
 
-import META from "../utils/consts/consts";
+import META from "../utils/consts/contents";
 
-const WorkerSpeech = () => {
-  const turn = [0, 1, 2, 3, 4, 5];
-  const workers = [worker1, worker2, worker3, worker4, worker5, worker6];
-  const speech = [
-    META.HOME.VALUE.INTERVIEW.FIRST,
-    META.HOME.VALUE.INTERVIEW.SECOND,
-    META.HOME.VALUE.INTERVIEW.THIRD,
-    META.HOME.VALUE.INTERVIEW.FOURTH,
-    META.HOME.VALUE.INTERVIEW.FIFTH,
-    META.HOME.VALUE.INTERVIEW.SIXTH,
-  ];
-  const workerName = [
-    META.HOME.VALUE.POSITION.FIRST,
-    META.HOME.VALUE.POSITION.SECOND,
-    META.HOME.VALUE.POSITION.THIRD,
-    META.HOME.VALUE.POSITION.FOURTH,
-    META.HOME.VALUE.POSITION.FIFTH,
-    META.HOME.VALUE.POSITION.SIXTH,
-  ];
-  return (
-    // 이미지가 1200해상도부턴 가로 556px 고정
-    // 992해상도 2개 이미지가 나오는데 452
-    // 991해상도부터 이미지 1개 가장 이미지가 클때이고 943px
-    // 265해상도부터 217.047px 고정
-
-    //320해상 272
-    //375 327
-    //425 377
-    //768 720 md
-    //1024 468 lg
-    //1440 556
-
-    // mobile_S:w-[272px] mobile_M:w-[327px] mobile_L:w-[377px] md:w-[720px] lg:w-[468px] Laptop_L:w-[556px]
-    <>
-      {turn.map((num) => (
-        <>
-          <li className="flex flex-col mr-9">
-            <img
-              className="min-w-[217px] max-w-[943px]"
-              src={workers[num]}
-              alt={`직원` + (num + 1)}
-            />
-            <p className="text-[1.625rem] font-bold leading-normal my-[31px] overflow-auto tracking-tight">
-              {speech[num]}
-            </p>
-            <p className="mb-[85px] text-[1.25rem] font-light">
-              {workerName[num]}
-            </p>
-          </li>
-        </>
-      ))}
-    </>
-  );
-};
-
-const RootPage = () => {
-  const [windowScreen, setWindowScreen] = useState({
-    width: window && window.innerWidth,
-    height: window && window.innerHeight,
-  });
-
-  const handleResize = () => {
-    setWindowScreen((prev) => ({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    }));
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [windowScreen]);
-
-  const carousel = useRef();
-
-  const btn1 = () => {
-    console.log(windowScreen);
-    carousel.current.className.match("translate")
-      ? (carousel.current.className = `flex flex-row  translate-x-0 duration-500`)
-      : (carousel.current.className += ` translate-x-0 duration-500`);
-  };
-  const btn2 = () => {
-    carousel.current.className.match("translate")
-      ? (carousel.current.className = `flex flex-row  translate-x-[-1190px] duration-500`)
-      : (carousel.current.className += ` translate-x-[-1190px] duration-500`);
-  };
-  const btn3 = () => {
-    carousel.current.className.match("translate")
-      ? (carousel.current.className = `flex flex-row  translate-x-[-2380px] duration-500`)
-      : (carousel.current.className += ` translate-x-[-2380px] duration-500`);
-  };
+const Home = () => {
   return (
     <>
       <main className="mt-100px px-6">
@@ -136,22 +38,11 @@ const RootPage = () => {
           </div>
         </section>
         <section className="  m-auto max-w-75 overflow-hidden">
-          <ul className="flex flex-row" ref={carousel}>
-            <WorkerSpeech />
-          </ul>
+          <ul className="flex flex-row"></ul>
           <div className="flex flex-row justify-center gap-8">
-            <button
-              className="relative rounded-full border-6 border-solid border-black"
-              onClick={btn1}
-            ></button>
-            <button
-              className="relative rounded-full border-6 border-solid border-black"
-              onClick={btn2}
-            ></button>
-            <button
-              className="relative rounded-full border-6 border-solid border-black"
-              onClick={btn3}
-            ></button>
+            <button className="relative rounded-full border-6 border-solid border-black"></button>
+            <button className="relative rounded-full border-6 border-solid border-black"></button>
+            <button className="relative rounded-full border-6 border-solid border-black"></button>
           </div>
         </section>
         <section className="w-full max-w-75 ">
@@ -281,4 +172,4 @@ const RootPage = () => {
   );
 };
 
-export default RootPage;
+export default Home;
