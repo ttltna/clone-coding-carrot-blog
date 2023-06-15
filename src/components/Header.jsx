@@ -1,3 +1,5 @@
+import NAVIGATOR from "../utils/consts/navigator";
+
 const Header = () => {
   return (
     <header className="w-screen h-68px bg-white m-0 sticky top-0 z-10">
@@ -21,16 +23,16 @@ const Header = () => {
         <nav className="m-0 block">
           <ul className="flex flex-row items-center gap-14 relative p-0 m-0">
             <li className="font-bold">
-              <a href="/culture">팀문화</a>
+              <a href="/culture">{NAVIGATOR.CULTURE}</a>
             </li>
             <li className="font-bold">
-              <a href="/service">서비스</a>
+              <a href="/service">{NAVIGATOR.SERVICE}</a>
             </li>
             <li className="font-bold">
-              <a href="/jobs">채용공고</a>
+              <a href="/jobs">{NAVIGATOR.RECRUIT}</a>
             </li>
             <li className="font-bold">
-              <a href="/blog">블로그</a>
+              <a href="/blog">{NAVIGATOR.BLOG}</a>
             </li>
           </ul>
         </nav>
